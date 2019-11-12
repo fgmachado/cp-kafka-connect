@@ -23,6 +23,8 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
 COPY drivers/jodbc4.jar /usr/share/java/kafka-connect-jdbc
 COPY drivers/sajdbc4.jar /usr/share/java/kafka-connect-jdbc
 
+RUN mkdir /usr/share/java/sql-anywhere-libs
+
 COPY library/libdbjdbc16.so /usr/share/java/sql-anywhere-libs
 COPY library/libdbjdbc16.so.1 /usr/share/java/sql-anywhere-libs
 COPY library/libdbjodbc16.so /usr/share/java/sql-anywhere-libs
