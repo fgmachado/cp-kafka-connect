@@ -20,8 +20,13 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/*
 
 ### Copying all SQL Anywhere driver files to kafka-connect-jdbc folder and their dependencies
-COPY drivers/jodbc4.jar drivers/sajdbc4.jar /usr/share/java/kafka-connect-jdbc
-COPY library/* /usr/share/java/sql-anywhere-libs
+COPY drivers/jodbc4.jar /usr/share/java/kafka-connect-jdbc
+COPY drivers/sajdbc4.jar /usr/share/java/kafka-connect-jdbc
+
+COPY library/libdbjdbc16.so /usr/share/java/sql-anywhere-libs
+COPY library/libdbjdbc16.so.1 /usr/share/java/sql-anywhere-libs
+COPY library/libdbjodbc16.so /usr/share/java/sql-anywhere-libs
+COPY library/libdbjodbc16.so.1 /usr/share/java/sql-anywhere-libs
 
 ## Added libs to SO PATH
 ENV PATH=/usr/share/java/sql-anywhere-libs:${PATH}
