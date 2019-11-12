@@ -30,6 +30,7 @@ COPY library/libdbjodbc16.so.1 /usr/share/java/sql-anywhere-libs
 
 ## Added libs to SO PATH
 ENV PATH=/usr/share/java/sql-anywhere-libs:${PATH}
+RUN export LD_LIBRARY_PATH=/usr/share/java/sql-anywhere-libs:${LD_LIBRARY_PATH}
 
 RUN echo "===> Installing GCS Sink Connector ..."
 RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
