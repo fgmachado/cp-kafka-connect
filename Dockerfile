@@ -6,6 +6,8 @@ ARG BUILD_NUMBER=-1
 
 ENV COMPONENT=kafka-connect
 
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
 RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
     && apt-get -qq update \
     && apt-get install -y \
