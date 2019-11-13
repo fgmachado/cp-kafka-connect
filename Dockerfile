@@ -1,8 +1,6 @@
 FROM confluentinc/cp-kafka-connect-base
 
 MAINTAINER fgmachado0@gmail.com
-ARG COMMIT_ID=unknown
-ARG BUILD_NUMBER=-1
 
 ENV COMPONENT=kafka-connect
 
