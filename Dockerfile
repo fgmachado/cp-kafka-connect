@@ -23,15 +23,5 @@ COPY drivers/jconn4-7.07_SP133.jar /usr/share/java/kafka-connect-jdbc
 COPY drivers/jtds-1.3.1-embratec.jar /usr/share/java/kafka-connect-jdbc
 RUN rm /usr/share/java/kafka-connect-jdbc/jtds-1.3.1.jar
 
-#RUN mkdir /usr/share/java/sql-anywhere-libs
-#COPY library/libdbjdbc16.so /usr/share/java/sql-anywhere-libs
-#COPY library/libdbjdbc16.so.1 /usr/share/java/sql-anywhere-libs
-#COPY library/libdbjodbc16.so /usr/share/java/sql-anywhere-libs
-#COPY library/libdbjodbc16.so.1 /usr/share/java/sql-anywhere-libs
-#COPY kafka-run-class /usr/bin
-## Added libs to SO PATH
-#ENV PATH=/usr/share/java/sql-anywhere-libs:${PATH}
-#RUN export LD_LIBRARY_PATH=/usr/share/java/sql-anywhere-libs:${LD_LIBRARY_PATH}
-
 RUN echo "===> Installing GCS Sink Connector ..."
 RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
