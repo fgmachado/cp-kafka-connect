@@ -17,9 +17,7 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
     && echo "===> Cleaning up ..."  \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/*
 
-COPY drivers/jconn4-7.07_SP133.jar /usr/share/java/kafka-connect-jdbc
-COPY drivers/jtds-1.3.1-embratec.jar /usr/share/java/kafka-connect-jdbc
-RUN rm /usr/share/java/kafka-connect-jdbc/jtds-1.3.1.jar
+COPY drivers/mysql-connector-java-8.0.18.jar /usr/share/java/kafka-connect-jdbc
 
 RUN echo "===> Installing GCS Sink Connector ..."
 RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
