@@ -18,6 +18,3 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/*
 
 COPY drivers/mysql-connector-java-8.0.18.jar /usr/share/java/kafka-connect-jdbc
-
-RUN echo "===> Installing GCS Sink Connector ..."
-RUN confluent-hub install confluentinc/kafka-connect-gcs:latest --no-prompt
