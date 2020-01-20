@@ -18,3 +18,5 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/*
 
 COPY drivers/mysql-connector-java-8.0.18.jar /usr/share/java/kafka-connect-jdbc
+COPY drivers/jconn4-7.07_SP133.jar /usr/share/java/kafka-connect-jdbc
+COPY drivers/jtds-1.3.1-embratec.jar /usr/share/java/kafka-connect-jdbc
