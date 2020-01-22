@@ -1,4 +1,4 @@
-FROM confluentinc/cp-kafka-connect-base
+FROM confluentinc/cp-kafka-connect-base:5.0.0
 ENV COMPONENT=kafka-connect
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
